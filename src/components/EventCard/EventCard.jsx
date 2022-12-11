@@ -4,35 +4,36 @@ import { FaMapMarkerAlt, FaFortAwesomeAlt, FaCalendarAlt, FaClock } from "react-
 // import { formatEventStar } from 'utils/formatEventStar';
 // import { formatEventDuration } from 'utils/formatEventDuration';
 import { formatEventStar, formatEventDuration } from 'utils';
-import css from './EventCard.module.css';
+// import css from './EventCard.module.css';
+import { Card, Chip, Info, EventName} from './EventCard.styled';
 export const EventCard = ({ name, location, type, speaker, start, end }) => {
 	const formatedDate = formatEventStar(start);
 	const formatDuration = formatEventDuration(start, end)
 	return (
-		<div className={css.event}>
-			<h2 className={css.title}>{name}</h2>
-			<p className={css.info}>
-				<FaMapMarkerAlt className={css.icon} size={16} />
-				<i className={css.chip}></i>
+		<Card>
+			<EventName>{name}</EventName>
+			<Info>
+				<FaMapMarkerAlt size={16} />
+				
 				{location}
-			</p>
-			<p className={css.info}>
-				<FaFortAwesomeAlt className={css.icon} size={16} />
-				<i className={css.chip}></i>
+			</Info>
+			<Info>
+				<FaFortAwesomeAlt size={16} />
+				
 				{speaker}
-			</p>
-			<p className={css.info}>
-				<FaCalendarAlt className={css.icon} size={16} />
-				<i className={css.chip}></i>
+			</Info>
+			<Info>
+				<FaCalendarAlt size={16} />
+				
 				{formatedDate}
-			</p>
-			<p className={css.info}>
-				<FaClock className={css.icon} size={16} />
-				<i className={css.chip}></i>
+			</Info>
+			<Info>
+				<FaClock size={16} />
+				
 				{formatDuration}
-			</p>
-			<span className={`${css.chip} ${css[type]}`}>{type}</span>
-		</div>
+			</Info>
+			<Chip eventType={type}>{type}</Chip>
+		</Card>
 	);
 };
 

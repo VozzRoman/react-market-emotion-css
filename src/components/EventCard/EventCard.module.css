@@ -1,4 +1,4 @@
-.event {
+/* .event {
 	position: relative;
 	border: 2px dashed;
 	padding: 8px;
@@ -34,14 +34,14 @@
 	text-transform: uppercase;
 	background-color: #000;
 	color: #fff;
-}
-.icon {
+} */
+/* .icon {
 	display: block;
 	margin-right: 8px;
 	color: #000;
-}
+} */
 
-.free {
+/* .free {
 	background-color: green;
 }
 .paid {
@@ -49,4 +49,4 @@
 }
 .vip {
 	background-color: red;
-}
+} */

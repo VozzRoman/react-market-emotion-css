@@ -1,12 +1,12 @@
 //Component EventBoard
 import PropTypes from 'prop-types';
 import { EventCard } from 'components/EventCard/EventCard';
-import css from './EventBoard.module.css';
+import { Board } from './EventBoard.styled';
 export const EventBoard = ({ events }) => {
 	console.log(events);
 	return (
 		<div>
-			<div className={css.eventBoard}>
+			<Board>
 				{events.map(event => (
 					<EventCard key={event.name}
 						name={event.name}
@@ -17,7 +17,7 @@ export const EventBoard = ({ events }) => {
 						end={event.time.end}
 					/>
 				))}
-			</div>
+			</Board>
 		</div>
 	);
 		
